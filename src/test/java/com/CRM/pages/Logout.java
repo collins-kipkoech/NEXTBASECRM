@@ -1,14 +1,15 @@
-package com.cheatSheat.pages;
+package com.CRM.pages;
 
-import com.cheatSheat.utility.ConfigReader;
-import com.cheatSheat.utility.Driver;
+import com.CRM.utility.Driver;
+import com.CRM.utility.ConfigReader;
+import com.CRM.utility.Driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class NextBaseLogout {
+public class Logout {
 
     @FindBy(xpath = "//input[@name='q']")
     public WebElement inputBox;
@@ -19,13 +20,11 @@ public class NextBaseLogout {
     @FindBy(linkText = "Log out")
     public WebElement logoutBtn;
 
-    public NextBaseLogout(){
+    public Logout(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    public void goTo(){
-        Driver.getDriver().navigate().to(ConfigReader.read("url"));
-    }
+
 
     public void logout(){
         userMenu.click();

@@ -1,13 +1,18 @@
-package com.cheatSheat.pages;
+package com.CRM.pages;
 
-import com.cheatSheat.utility.ConfigReader;
-import com.cheatSheat.utility.Driver;
+import com.CRM.utility.ConfigReader;
+import com.CRM.utility.Driver;
+import com.CRM.utility.ConfigReader;
+import com.CRM.utility.Driver;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class NextBaseLogin {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class Login {
 
 
     @FindBy(xpath = "//div[.='Authorization']")
@@ -25,7 +30,7 @@ public class NextBaseLogin {
     @FindBy(xpath = "//div[@class='errortext']")
     public WebElement errorMsg;
 
-    public NextBaseLogin(){
+    public Login(){
         PageFactory.initElements(Driver.getDriver(),this);
 
     }
@@ -44,6 +49,7 @@ public class NextBaseLogin {
         this.submitBtn.click();
 
     }
+
 
     public boolean loginErrorMsgPresent(){
 
