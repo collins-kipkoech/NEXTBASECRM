@@ -9,12 +9,17 @@ public class Poll {
     @FindBy(id = "feed-add-post-form-tab-vote")
     public WebElement pollBtn;
 
+    @FindBy(xpath = "//iframe[@class='bx-editor-iframe']")
+    public WebElement pollFrame;
+
     public Poll(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
     public void createPoll(){
         this.pollBtn.click();
+        Driver.getDriver().switchTo().frame(pollFrame);
         
+
     }
 }
