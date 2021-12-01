@@ -9,4 +9,7 @@ public class Message {
 
     @FindBy(xpath = "//iframe[@class='bx-editor-iframe']")
     public WebElement iframeBtn;
+
+    @FindBy(xpath = "//button[@id='blog-submit-button-save']")
+    public WebElement submitBtn;
 }
