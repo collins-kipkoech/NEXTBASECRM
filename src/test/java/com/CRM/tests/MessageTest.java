@@ -7,6 +7,7 @@ import com.CRM.utility.ConfigReader;
 import com.CRM.utility.Driver;
 import com.CRM.utility.TestBase;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WebElement;
 
 public class MessageTest extends TestBase {
     Message message;
@@ -34,9 +35,18 @@ public class MessageTest extends TestBase {
 
 
 
+    }
 
+    @Test
+    public void testTextSend(){
+        message = new Message();
 
-
-
+        login = new Login();
+        login.goTo();
+        String username = ConfigReader.read("username");
+        String password = ConfigReader.read("password");
+        login.login(username,password);
+        BrowserUtil.waitFor(2);
+        message.messages();
     }
 }
