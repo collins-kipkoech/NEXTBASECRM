@@ -15,6 +15,11 @@ public class Message {
     @FindBy(xpath = "//button[@id='blog-submit-button-save']")
     public WebElement submitBtn;
 
+    @FindBy(tagName = "body")
+    public WebElement textArea;
+
+
+
     public Message(){
         PageFactory.initElements(Driver.getDriver(),this);
     }

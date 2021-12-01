@@ -26,7 +26,13 @@ public class MessageTest extends TestBase {
 
         Driver.getDriver().switchTo().frame(message.iframeBtn);
 
-        
+        message.textArea.sendKeys("i love programming");
+
+        Driver.getDriver().switchTo().parentFrame();
+
+        message.submitBtn.click();
+
+
 
 
 
